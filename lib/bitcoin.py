@@ -26,6 +26,7 @@
 
 import hashlib
 import base64
+import os
 import re
 import hmac
 
