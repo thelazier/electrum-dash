@@ -1,6 +1,6 @@
 #!/bin/bash
 export ELECTRUM_VERSION=$(grep -h ELECTRUM_VERSION lib/version.py |cut -d "'" -f 2)
-echo Electrum $ELECTRUM_VERSION
+echo Electrum-DASH $ELECTRUM_VERSION
 save_cd=`pwd`
 
 if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
