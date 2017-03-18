@@ -83,7 +83,8 @@ setup(
     scripts=['electrum-dash'],
     data_files=data_files,
     description="Lightweight Dashpay Wallet",
-    author="mazaclub",
+    author="Dash",
+    author_email="contact@dash.org",
     license="MIT License",
     url="https://electrum-dash.org",
     long_description="""Lightweight Dashpay Wallet"""
