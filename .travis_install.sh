@@ -82,7 +82,7 @@ USE_OSX_FRAMEWORKS=0 pip install https://github.com/kivy/kivy/archive/master.zip
 hash -r
 python setup.py sdist
 pip install --pre dist/Electrum-*tar.gz
-find $HOME |grep qt_menu
+find / -name qt_menu.nib
 #
 else
 # Install some custom requirements on Linux
