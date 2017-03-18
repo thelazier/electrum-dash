@@ -72,16 +72,6 @@ echo Done make.
 make install
 cd ..
 fi
-# use anaconda
-#wget https://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh -O miniconda.sh
-#bash miniconda.sh -b -p $HOME/miniconda
-#export PATH="$HOME/miniconda/bin:$PATH"
-#hash -r
-#conda config --set always_yes yes --set changeps1 no
-#conda update -q conda
-#conda install pyqt=4
-#conda install dnspython ecdsa pbkdf2 protobuf requests six
-#conda info -a
 # Additional pip
 pip install dnspython jsonrpclib qrcode pyaes PySocks wheel pytest coverage py2app tox cython
 pip install certifi cffi configparser crypto cryptography dnspython ecdsa gi gmpy html http jsonrpclib 
@@ -92,6 +82,7 @@ USE_OSX_FRAMEWORKS=0 pip install https://github.com/kivy/kivy/archive/master.zip
 hash -r
 python setup.py sdist
 pip install --pre dist/Electrum-*tar.gz
+find $HOME |grep qt_menu
 #
 else
 # Install some custom requirements on Linux
