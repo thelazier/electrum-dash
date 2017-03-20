@@ -20,10 +20,14 @@ export PYTHONPATH=$HOME/virtualenv/lib/python2.7
 # Qt
 which qmake
 if [ "$(which qmake)" == "" ]; then
-wget https://download.qt.io/archive/qt/5.5/5.5.1/submodules/qtbase-opensource-src-5.5.1.tar.gz
-gunzip qtbase-opensource-src-5.5.1.tar.gz
-tar -xf qtbase-opensource-src-5.5.1.tar
-cd qtbase-opensource-src-5.5.1
+#wget https://download.qt.io/archive/qt/5.5/5.5.1/submodules/qtbase-opensource-src-5.5.1.tar.gz
+#gunzip qtbase-opensource-src-5.5.1.tar.gz
+#tar -xf qtbase-opensource-src-5.5.1.tar
+#cd qtbase-opensource-src-5.5.1
+wget https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz
+gunzip qt-everywhere-opensource-src-4.8.7.tar.gz
+tar -xf qt-everywhere-opensource-src-4.8.7.tar
+cd qt-everywhere-opensource-src-4.8.7
 ./configure -prefix $HOME/virtualenv -release -opensource -confirm-license -nomake examples -nomake tests -no-cups -no-opengl -no-sql-psql -no-sql-sqlite -qt-zlib -no-separate-debug-info 
 make -j4 2>&1 >> /tmp/make_qt.log &
 pid=$!
