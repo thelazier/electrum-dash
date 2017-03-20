@@ -63,7 +63,7 @@ make install
 cd ..
 which qmake
 export QT_CACHE=0
-fi
+else
 # SIP
 if [ "$(which sip)" == "" ]; then
 wget "https://sourceforge.net/projects/pyqt/files/sip/sip-4.19.1/sip-4.19.1.tar.gz"
@@ -98,6 +98,7 @@ done
 echo Done make.
 make install
 cd ..
+fi
 fi
 # Additional pip
 pip install dnspython jsonrpclib qrcode pyaes PySocks wheel pytest coverage py2app tox cython
