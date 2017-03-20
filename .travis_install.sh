@@ -49,7 +49,7 @@ index 4aa0668..63b646d 100644 (file)
      if (colorSpace == 0)
 EOF
 patch -p1 <patchset1.patch
-./configure -prefix $HOME/virtualenv -release -opensource -confirm-license -nomake examples -nomake tests -nomake demos -no-cups -no-sql-psql -no-sql-sqlite -qt-zlib -qt-libjpeg -qt-libpng -qt-libmng -qt-libtiff -no-qt3support -no-webkit 
+./configure -prefix $HOME/virtualenv -release -opensource -confirm-license -nomake examples -nomake demos -no-cups -no-sql-psql -no-sql-sqlite -qt-zlib -qt-libjpeg -qt-libpng -qt-libmng -qt-libtiff -no-qt3support -no-webkit 
 make -j4 2>&1 >> /tmp/make_qt.log &
 pid=$!
 while kill -0 $pid 2>/dev/null
