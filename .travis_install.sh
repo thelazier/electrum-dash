@@ -103,10 +103,10 @@ pip install certifi cffi configparser crypto cryptography dnspython ecdsa gi gmp
 pip install mercurial numpy ordereddict packaging ply pyOpenSSL pyasn1 pyasn1-modules pycparser pycrypto 
 pip install setuptools setuptools-svn simplejson wincertstore trezor mock zbar
 pip install pygame Pillow buildozer 
-USE_OSX_FRAMEWORKS=0 pip install https://github.com/kivy/kivy/archive/master.zip
+#USE_OSX_FRAMEWORKS=0 pip install https://github.com/kivy/kivy/archive/master.zip
 hash -r
 python setup.py sdist
-pip install --pre dist/Electrum-*tar.gz
+#pip install --pre dist/Electrum-*tar.gz
 #
 else
 # Install some custom requirements on Linux
