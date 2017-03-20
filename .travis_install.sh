@@ -1,4 +1,5 @@
 #!/bin/bash
+export QT_CACHE=1
 export ELECTRUM_VERSION=$(grep -h ELECTRUM_VERSION lib/version.py |cut -d "'" -f 2)
 echo Electrum-DASH $ELECTRUM_VERSION
 save_cd=`pwd`
@@ -62,8 +63,6 @@ make install
 cd ..
 which qmake
 export QT_CACHE=0
-else
-export QT_CACHE=1
 fi
 # SIP
 if [ "$(which sip)" == "" ]; then
