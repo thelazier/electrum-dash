@@ -26,6 +26,7 @@ script:
     - coverage report
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./contrib/make_packages; fi
     - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ARCHFLAGS="-arch i386 -arch X86_64" python setup-release.py py2app --includes sip ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then pyinstaller --noconfirm --log-level=WARN --onefile --windowed --icon=electrum-dash.ico electrum-dash;ls -la ./dist;cat *.spec; fi
     - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then hdiutil create -fs HFS+ -volname "Electrum-DASH" -srcfolder dist/Electrum-DASH.app dist/electrum-dash-$ELECTRUM_VERSION-macosx.dmg; curl --upload-file dist/electrum-dash-$ELECTRUM_VERSION-macosx.dmg https://transfer.sh/electrum-dash-$ELECTRUM_VERSION-macosx.dmg; fi
 
 after_success:
