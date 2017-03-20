@@ -61,6 +61,9 @@ echo Done make.
 make install
 cd ..
 which qmake
+export QT_CACHE=0
+else
+export QT_CACHE=1
 fi
 # SIP
 if [ "$(which sip)" == "" ]; then
