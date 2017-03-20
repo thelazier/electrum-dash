@@ -28,7 +28,7 @@ wget https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensou
 gunzip qt-everywhere-opensource-src-4.8.7.tar.gz
 tar -xf qt-everywhere-opensource-src-4.8.7.tar
 cd qt-everywhere-opensource-src-4.8.7
-./configure -prefix $HOME/virtualenv -release -opensource -confirm-license -nomake examples -nomake tests -no-cups -no-opengl -no-sql-psql -no-sql-sqlite -qt-zlib -no-separate-debug-info 
+./configure -prefix $HOME/virtualenv -release -opensource -confirm-license -nomake examples -nomake tests -nomake demos -no-cups -no-sql-psql -no-sql-sqlite -qt-zlib -qt-libjpeg -qt-libpng -qt-libmng qt-libtiff -no-qt3support -no-webkit 
 make -j4 2>&1 >> /tmp/make_qt.log &
 pid=$!
 while kill -0 $pid 2>/dev/null
