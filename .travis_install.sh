@@ -5,7 +5,7 @@ save_cd=`pwd`
 
 if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
 # Install some custom requirements on OS X
-brew install protobuf zbar upx patch
+brew install protobuf zbar upx
 # VirtualEnv
 if source $HOME/virtualenv/bin/activate; then 
   python --version
