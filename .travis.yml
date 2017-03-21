@@ -25,7 +25,7 @@ script:
     - coverage run --source=lib -m py.test -v
     - coverage report
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./contrib/make_packages; fi
-    - if [[ "$QT_CACHE" == "1" && "$TRAVIS_OS_NAME" == "osx" ]]; then pip install --upgrade pyinstaller; pyinstaller --noconfirm --log-level=WARN --onefile --windowed --icon=electrum-dash.icns electrum-dash;ls -la ./dist;curl --upload-file electrum-dash.spec https://transfer.sh/elecrum-dash_mac.spec; curl --upload-file dist/elecrum-dash https://transfer.sh/electrum-dash_mac; fi
+    - if [[ "$QT_CACHE" == "1" && "$TRAVIS_OS_NAME" == "osx" ]]; then pip install --upgrade pyinstaller; pyinstaller --noconfirm --log-level=WARN --onefile --windowed --icon=electrum-dash.icns electrum-dash;ls -la ./dist;file dist/electrum-dash;curl --upload-file electrum-dash.spec https://transfer.sh/elecrum-dash_mac.spec; curl --upload-file dist/electrum-dash https://transfer.sh/electrum-dash-$ELECTRUM_VERSION-macosx; fi
     - if [[ "$QT_CACHE" == "1" && "$TRAVIS_OS_NAME" == "osx" ]]; then hdiutil create -fs HFS+ -volname "Electrum-DASH" -srcfolder dist/electrum-dash.app dist/electrum-dash-$ELECTRUM_VERSION-macosx.dmg; curl --upload-file dist/electrum-dash-$ELECTRUM_VERSION-macosx.dmg https://transfer.sh/electrum-dash-$ELECTRUM_VERSION-macosx.dmg; fi
 
 after_success:
