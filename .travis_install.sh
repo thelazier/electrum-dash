@@ -151,12 +151,12 @@ else
   fi
 
   # Additional pip
-  pip install --uprade pip cython
+  pip install --upgrade pip cython
   pip install dnspython jsonrpclib qrcode pyaes PySocks wheel pytest coverage py2app tox \
     certifi cffi configparser crypto cryptography dnspython ecdsa gi html http jsonrpclib \
     mercurial numpy ordereddict packaging ply pyOpenSSL pyasn1 pyasn1-modules pycparser pycrypto \
     setuptools setuptools-svn simplejson wincertstore trezor \
-    kivy pygame Pillow protobuf buildozer pyinstaller win32com
+    kivy pygame Pillow protobuf buildozer pyinstaller
   python setup.py install
 #
 fi
