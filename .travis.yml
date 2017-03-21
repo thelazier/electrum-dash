@@ -25,8 +25,9 @@ script:
     - coverage run --source=lib -m py.test -v
     - coverage report
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./contrib/make_packages; fi
-    - if [[ "$QT_CACHE" == "1" && "$TRAVIS_OS_NAME" == "osx" ]]; then pip install --upgrade pyinstaller; pyinstaller --noconfirm  electrum-dash_mac.spec ;ls -la ./dist;file dist/electrum-dash; curl --upload-file dist/electrum-dash https://transfer.sh/electrum-dash-$ELECTRUM_VERSION-macosx; ./dist/electrum-dash ; exit 0; fi
-    - if [[ "$QT_CACHE" == "1" && "$TRAVIS_OS_NAME" == "osx" ]]; then hdiutil create -fs HFS+ -volname "Electrum-DASH" -srcfolder dist/electrum-dash.app dist/electrum-dash-$ELECTRUM_VERSION-macosx.dmg; curl --upload-file dist/electrum-dash-$ELECTRUM_VERSION-macosx.dmg https://transfer.sh/electrum-dash-$ELECTRUM_VERSION-macosx.dmg; fi
+    - if [[ "$QT_CACHE" == "1" && "$TRAVIS_OS_NAME" == "osx" ]]; then pyinstaller --noconfirm  electrum-dash_mac.spec ;ls -la ./dist; fi
+    - if [[ "$QT_CACHE" == "1" && "$TRAVIS_OS_NAME" == "osx" ]]; then hdiutil create -fs HFS+ -volname "Electrum-DASH" -srcfolder dist/electrum-dash.app dist/electrum-dash-$ELECTRUM_VERSION.dmg; fi
 
 after_success:
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ls -la dist; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then curl --upload-file dist/electrum-dash.bin https://transfer.sh/Electrum-DASH-$ELECTRUM_VERSION.bin;  curl --upload-file dist/electrum-dash-$ELECTRUM_VERSION.dmg https://transfer.sh/Electrum-DASH-$ELECTRUM_VERSION.dmg; fi
