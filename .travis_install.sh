@@ -105,7 +105,7 @@ pip install dnspython jsonrpclib qrcode pyaes PySocks wheel pytest coverage py2a
 pip install certifi cffi configparser crypto cryptography dnspython ecdsa gi gmpy html http jsonrpclib 
 pip install mercurial numpy ordereddict packaging ply pyOpenSSL pyasn1 pyasn1-modules pycparser pycrypto 
 pip install setuptools setuptools-svn simplejson wincertstore trezor mock zbar
-pip install pygame Pillow buildozer win32com pyinstaller
+pip install pygame Pillow buildozer win32com pyinstaller csv
 #USE_OSX_FRAMEWORKS=0 pip install https://github.com/kivy/kivy/archive/master.zip
 hash -r
 python setup.py sdist
