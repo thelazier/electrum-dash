@@ -24,7 +24,7 @@ script:
     - pyrcc4 icons.qrc -o gui/qt/icons_rc.py
     - coverage run --source=lib -m py.test -v
     - coverage report
-    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then pyinstaller --noconfirm  electrum-dash_linux.spec; ls -la ./dist; fi
+    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then pyinstaller --noconfirm  --distpath ./pyinstaller-dist electrum-dash_linux.spec; ls -la ./pyinstaller-dist; fi
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./contrib/make_packages; ls -la ./dist; fi
     - if [[ "$QT_CACHE" == "1" && "$TRAVIS_OS_NAME" == "osx" ]]; then pyinstaller --noconfirm  electrum-dash_mac.spec ;ls -la ./dist; fi
     - if [[ "$QT_CACHE" == "1" && "$TRAVIS_OS_NAME" == "osx" ]]; then hdiutil create -fs HFS+ -volname "Electrum-DASH" -srcfolder dist/electrum-dash.app dist/electrum-dash-$ELECTRUM_VERSION.dmg; fi
