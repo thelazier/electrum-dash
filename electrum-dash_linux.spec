@@ -23,19 +23,14 @@ a = Analysis(['electrum-dash'],
              cipher=block_cipher)
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
+
 exe = EXE(pyz,
           a.scripts,
-          exclude_binaries=True,
-          name='electrum-dash',
+          a.binaries,
+          a.zipfiles,
+          a.datas,
+          name='Electrum-DASH.bin',
           debug=False,
           strip=False,
           upx=False,
           console=False, icon='electrum-dash.icns' )
-coll = COLLECT(exe,
-               a.binaries,
-               a.zipfiles,
-               a.datas,
-               strip=False,
-               upx=False,
-               icon='electrum-dash.icns',
-               name='electrum-dash')
