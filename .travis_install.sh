@@ -158,6 +158,7 @@ else
     setuptools setuptools-svn simplejson wincertstore trezor \
     kivy pygame Pillow protobuf buildozer pyinstaller
   python setup.py install
+  python setup.py sdist
 #
 fi
 
