@@ -7,9 +7,6 @@ save_cd=`pwd`
 # OS X
 if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
 
-  # Install some custom requirements on OS X
-  brew install protobuf zbar upx
-
   # VirtualEnv
   if source $HOME/virtualenv/bin/activate; then
     python --version
@@ -65,6 +62,7 @@ EOF
     which qmake
     export QT_CACHE=0
   else
+
     # SIP
     if [ "$(which sip)" == "" ]; then
       wget "https://sourceforge.net/projects/pyqt/files/sip/sip-4.19.1/sip-4.19.1.tar.gz"

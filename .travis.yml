@@ -18,6 +18,7 @@ matrix:
                       - libudev-dev
 
 install:
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install protobuf zbar; fi
     - source ./.travis_install.sh
 
 script:
