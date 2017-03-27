@@ -49,7 +49,7 @@ index 4aa0668..63b646d 100644 (file)
 EOF
     patch -p1 <patchset1.patch
     ./configure -prefix $HOME/virtualenv -release -opensource -confirm-license -nomake examples -nomake demos -no-cups -no-sql-psql -no-sql-sqlite -qt-zlib -qt-libjpeg -qt-libpng -qt-libmng -qt-libtiff -no-qt3support
-    make -j4 2>&1 >> /tmp/make_qt.log &
+    make -j2 install  >/dev/null &
     pid=$!
     while kill -0 $pid 2>/dev/null
     do
@@ -57,7 +57,6 @@ EOF
       sleep 1
     done
     echo Done make.
-    make install
     cd ..
     which qmake
     export QT_CACHE=0
@@ -69,7 +68,7 @@ EOF
       tar xzf sip-4.19.1.tar.gz
       cd sip-4.19.1
       python configure.py --incdir="$(python -c 'import sys; print(sys.prefix)')"/include/python"$PYTHON_VERSION"
-      make -j4 2>&1 >> /tmp/make_sip.log &
+      make -j2 install >/dev/null &
       pid=$!
       while kill -0 $pid 2>/dev/null
       do
@@ -77,7 +76,6 @@ EOF
         sleep 1
       done
       echo Done make.
-      make install
       cd ..
     fi
 
@@ -87,7 +85,7 @@ EOF
       tar xzf PyQt4_gpl_x11-4.12.tar.gz
       cd PyQt4_gpl_x11-4.12
       python configure.py --verbose --confirm-license --no-designer-plugin --no-qsci-api --no-timestamp
-      make -j4 2>&1 >> /tmp/make_pyqt4.log &
+      make -j2 install >/dev/null &
       pid=$!
       while kill -0 $pid 2>/dev/null
       do
@@ -95,7 +93,6 @@ EOF
         sleep 1
       done
       echo Done make.
-      make install
       cd ..
     fi
   fi
@@ -118,7 +115,7 @@ else
     tar xzf sip-4.19.1.tar.gz
     cd sip-4.19.1
     python configure.py --incdir="$(python -c 'import sys; print(sys.prefix)')"/include/python"$PYTHON_VERSION"
-    make -j4 2>&1 >> /tmp/make_sip.log &
+    make -j2 install >/dev/null &
     pid=$!
     while kill -0 $pid 2>/dev/null
     do
@@ -126,7 +123,6 @@ else
       sleep 1
     done
     echo Done make.
-    make install
     cd ..
   fi
 
@@ -136,7 +132,7 @@ else
     tar xzf PyQt4_gpl_x11-4.12.tar.gz
     cd PyQt4_gpl_x11-4.12
     python configure.py --confirm-license --no-designer-plugin --no-qsci-api --no-timestamp
-    make -j4 2>&1 >> /tmp/make_pyqt4.log &
+    make -j2 install >/dev/null &
     pid=$!
     while kill -0 $pid 2>/dev/null
     do
@@ -144,7 +140,6 @@ else
       sleep 1
     done
     echo Done make.
-    make install
     cd ..
   fi
 
