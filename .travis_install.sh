@@ -106,6 +106,7 @@ EOF
     USE_OSX_FRAMEWORKS=0 pip install https://github.com/kivy/kivy/archive/master.zip
   hash -r
   python setup.py sdist
+  python setup.py install
   #
 else
 # Install some custom requirements on Linux
