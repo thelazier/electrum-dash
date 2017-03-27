@@ -102,7 +102,7 @@ EOF
     certifi cffi configparser crypto cryptography dnspython ecdsa gi gmpy html http jsonrpclib \
     mercurial numpy ordereddict packaging ply pyOpenSSL pyasn1 pyasn1-modules pycparser pycrypto \
     setuptools setuptools-svn simplejson wincertstore trezor mock zbar \
-    pygame Pillow buildozer win32com pyinstaller csv
+    pygame Pillow buildozer pyinstaller csv
     USE_OSX_FRAMEWORKS=0 pip install https://github.com/kivy/kivy/archive/master.zip
   hash -r
   python setup.py sdist
