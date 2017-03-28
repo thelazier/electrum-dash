@@ -157,3 +157,4 @@ else
 fi
 
 cd $save_cd
+cp -r $HOME/virtualenv/lib/python2.7/site-packages packages

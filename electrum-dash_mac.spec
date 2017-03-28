@@ -8,13 +8,14 @@ added_files = [
     ('lib',''),
     ('gui',''),
     ('plugins','')
+    ('packages','')
     ]
 
 a = Analysis(['electrum-dash'],
              pathex=[os.path.dirname(os.path.realpath('__file__'))],
              binaries=[],
              datas=added_files,
-             hiddenimports=['PyQt4.QtCore', 'PyQt4.QtGui', 'PyQt4.QtWebKit', 'PyQt4.QtNetwork', 'sip', 'csv', 'PyQt4.Qt'],
+             hiddenimports=['PyQt4','lib','gui','plugins','trezorlib','hid','sip', 'csv'],
              hookspath=[],
              runtime_hooks=[],
              excludes=[],
