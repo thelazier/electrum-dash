@@ -107,9 +107,6 @@ EOF
   hash -r
   python setup.py sdist
   pip install --pre dist/Electrum-*tar.gz
-  pip install --no-compile -t $save_cd/packages -r $save_cd/requirements.txt
-  cp -rv $HOME/virtualenv/lib/python2.7/site-packages/trezorlib $save_cd/packages/.
-  touch packages/google/__init__.py
   #
 else
 # Install some custom requirements on Linux
