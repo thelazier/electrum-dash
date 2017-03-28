@@ -7,7 +7,7 @@ block_cipher = None
 added_files = [
     ('lib',''),
     ('gui',''),
-    ('plugins','')
+    ('plugins',''),
     ('packages','')
     ]
 
