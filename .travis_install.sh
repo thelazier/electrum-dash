@@ -107,7 +107,9 @@ EOF
   hash -r
   python setup.py sdist
   pip install --pre dist/Electrum-*tar.gz
-  cp -rv $HOME/virtualenv/lib/python2.7/site-packages $save_cd/packages
+  pip install --no-compilee -t $save_cd/packages -r $save_cd/requirements.txt
+  cp -rv $HOME/virtualenv/lib/python2.7/site-packages/trezorlib $save_cd/packages/.
+  touch packages/google/__init__.py
   #
 else
 # Install some custom requirements on Linux
@@ -154,7 +156,6 @@ else
     kivy pygame Pillow protobuf buildozer pyinstaller
   python setup.py install
   python setup.py sdist
-  cp -rv $HOME/virtualenv/lib/python2.7/site-packages $save_cd/packages
 #
 fi
 
