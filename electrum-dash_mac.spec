@@ -11,7 +11,11 @@ added_files = [
     ('packages','')
     ]
 
-a = Analysis(['electrum-dash'],
+a = Analysis(['electrum-dash', 'gui/qt/main_window.py', 'gui/qt/lite_window.py', 'gui/text.py',
+              'lib/util.py', 'lib/wallet.py', 'lib/simple_config.py','gui/gtk.py',
+              'lib/bitcoin.py','lib/interface.py', 'packages/trezorctl.py', 'lib/dnssec.py',
+              'plugins/trezor.py','gui/qt/installwizard.py',
+              ],
              pathex=[os.path.dirname(os.path.realpath('__file__'))],
              binaries=[],
              datas=added_files,
