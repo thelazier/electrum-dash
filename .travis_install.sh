@@ -19,6 +19,7 @@ if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
   fi
 
   export PYTHONPATH=$HOME/virtualenv/lib/python2.7
+  export ARCHFLAGS="-arch i386 -arch x86_64"
 
   # Qt
   if [ "$(which qmake)" == "" ]; then
