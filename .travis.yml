@@ -27,7 +27,7 @@ script:
     - echo coverage report
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then pyinstaller --noconfirm  --distpath ./pyinstaller-dist electrum-dash_linux.spec; cd pyinstaller-dist; mv Electrum-DASH.bin Electrum-DASH-$ELECTRUM_VERSION.bin ; ls -la; file Electrum-DASH-$ELECTRUM_VERSION.bin  ; curl --upload-file Electrum-DASH-$ELECTRUM_VERSION.bin https://transfer.sh/Electrum-DASH-$ELECTRUM_VERSION.bin ;./Electrum-DASH-$ELECTRUM_VERSION.bin ;cd ..; fi
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./contrib/make_packages; ls -la ./dist; fi
-    - if [[ "$QT_CACHE" == "1" && "$TRAVIS_OS_NAME" == "osx" ]]; then file packages/x11_hash.so;pyinstaller --noconfirm  electrum-dash_mac.spec ;ls -la ./dist; ls -la ./packages;fi
+    - if [[ "$QT_CACHE" == "1" && "$TRAVIS_OS_NAME" == "osx" ]]; then pip install -t ./packages -r requirements.txt;cp -rv $HOME/virtualenv/lib/python2.7/site-packages/trezorlib packages/.;touch packages/google/__init__.py;file packages/x11_hash.so;pyinstaller --noconfirm  electrum-dash_mac.spec ;ls -la ./dist; ls -la ./packages;fi
     - if [[ "$QT_CACHE" == "1" && "$TRAVIS_OS_NAME" == "osx" ]]; then hdiutil create -fs HFS+ -volname "Electrum-DASH" -srcfolder dist/electrum-dash.app dist/electrum-dash-$ELECTRUM_VERSION.dmg; fi
 
 after_success:
