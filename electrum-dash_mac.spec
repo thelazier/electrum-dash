@@ -7,8 +7,7 @@ block_cipher = None
 added_files = [
     ('lib',''),
     ('gui',''),
-    ('plugins',''),
-    ('packages','')
+    ('plugins','')
     ]
 
 a = Analysis(['electrum-dash', 'gui/qt/main_window.py', 'gui/text.py',

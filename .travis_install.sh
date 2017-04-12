@@ -108,7 +108,7 @@ EOF
   hash -r
   python setup.py sdist
   pip install --pre dist/Electrum-*tar.gz
-  cp -r $HOME/virtualenv/lib/python2.7/site-packages packages
+#  cp -r $HOME/virtualenv/lib/python2.7/site-packages packages
   #
 else
 # Install some custom requirements on Linux
